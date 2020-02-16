@@ -35,7 +35,7 @@ import com.android.settings.core.instrumentation.InstrumentedDialogFragment;
 public class GestureNavigationBackSensitivityDialog extends InstrumentedDialogFragment {
     private static final String TAG = "GestureNavigationBackSensitivityDialog";
     private static final String KEY_BACK_SENSITIVITY = "back_sensitivity";
-
+    private static final String KEY_BACK_HEIGHT = "back_height";
     public static void show(SystemNavigationGestureSettings parent, int sensitivity, int height) {
         if (!parent.isAdded()) {
             return;
@@ -63,7 +63,7 @@ public class GestureNavigationBackSensitivityDialog extends InstrumentedDialogFr
         final SeekBar seekBarSensitivity = view.findViewById(R.id.back_sensitivity_seekbar);
         seekBarSensitivity.setProgress(getArguments().getInt(KEY_BACK_SENSITIVITY));
         final SeekBar seekBarHeight = view.findViewById(R.id.back_height_seekbar);
-        seekBarHeight.setProgress(getArguments().getInt(KEY_BACK_HEIGHT))
+        seekBarHeight.setProgress(getArguments().getInt(KEY_BACK_HEIGHT));
         return new AlertDialog.Builder(getContext())
                 .setTitle(R.string.back_options_dialog_title)
                 .setMessage(R.string.back_sensitivity_dialog_message)
